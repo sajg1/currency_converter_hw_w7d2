@@ -6,7 +6,10 @@
     <script type="text/javascript" src="./js/bundle.js"></script>
   </head>
   <body>
-    <div id="#app">
+    <div id="app">
+      <ul v-for="value in exchangeRates">
+        <li>{{value}}</li>
+      </ul>
     </div>
   </body>
 </html>
