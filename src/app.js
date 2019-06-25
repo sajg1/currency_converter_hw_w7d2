@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       exchangeRates: {},
-      amountToConvert: 0
+      amountToConvert: 0,
+      selectedCurrency: ""
     },
     mounted() {
       this.getExchangeRates();

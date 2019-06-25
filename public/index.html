@@ -8,10 +8,16 @@
   <body>
     <div id="app">
       <h1>Euro Currency Converter</h1>
-
+      <form v-on:submit.prevent="checkConversion">
       <label for="amountToConvert">Please enter amount to convert(in Euros):</label>
       <input type="number" id="amountToConvert" v-model.number="amountToConvert">
 
+      <select v-model = "selectedCurrency">
+        <option v-for="(value, name) in exchangeRates">{{ name }}</option>
+      </select>
+
+      <input type="submit" value="Check conversion rate">
+      </form>
       <ul v-for="(value, name) in exchangeRates">
         <li>{{ name }} : {{ value }}</li>
       </ul>
