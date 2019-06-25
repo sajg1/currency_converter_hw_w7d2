@@ -8,6 +8,10 @@
   <body>
     <div id="app">
       <h1>Euro Currency Converter</h1>
+
+      <label for="amountToConvert">Please enter amount to convert(in Euros):</label>
+      <input type="number" id="amountToConvert" v-model.number="amountToConvert">
+
       <ul v-for="(value, name) in exchangeRates">
         <li>{{ name }} : {{ value }}</li>
       </ul>
