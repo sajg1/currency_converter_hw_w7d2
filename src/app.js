@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       exchangeRates: {},
       amountToConvert: 0,
-      selectedCurrency: ""
+      amountToConvertOther: 0,
+      selectedCurrency: "",
+      selectedCurrencyToEuros: ""
     },
     mounted() {
       this.getExchangeRates();
@@ -17,6 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const [currency, rate] of entries) {
           if (currency === this.selectedCurrency) {
             const amount = this.amountToConvert * rate;
+            return amount.toFixed(2);
+          }
+        }
+      },
+      // repetitive code needs refactored here and a helper function written for
+      // Object.entries
+      exchangeRateFromOther: function () {
+        const entries = Object.entries(this.exchangeRates);
+        for (const [currency, rate] of entries) {
+          if (currency === this.selectedCurrencyToEuros) {
+            const amount = this.amountToConvertOther / rate;
             return amount.toFixed(2);
           }
         }

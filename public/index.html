@@ -15,12 +15,22 @@
         <option v-for="(value, name) in exchangeRates">{{ name }}</option>
       </select>
       <input type="number" id="amountToConvert" v-model.number="amountToConvert">
+    </form>
+      <br>
 
-
-
+      <form v-on:submit.prevent="exchangeRateFromOther">
+        <label for="selectedCurrencyToEuros">Please enter amount to convert</label>
+        <select id="selectedCurrencyToEuros" v-model = "selectedCurrencyToEuros">
+          <option v-for="(value, name) in exchangeRates">{{ name }}</option>
+        </select>
+        <label for="amountToConvertOther">/€</label>
+        <input type="number" id="amountToConvertOther" v-model.number="amountToConvertOther">
       </form>
+
       <br>
       <h3>Exchange Rate (€/selected currency): {{ exchangeRateFromEuros }} {{ selectedCurrency }}</h3>
+      <br>
+      <h3>Exchange Rate (selected currency/ €): {{ exchangeRateFromOther}} Euros</h3>
       <br>
       <p>Latest Exchange Rates : €</p>
       <ul v-for="(value, name) in exchangeRates">
