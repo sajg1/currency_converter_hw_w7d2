@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
       this.getExchangeRates();
     },
     computed: {
-      getExchangeRateFromEuros: function () {
+      exchangeRateFromEuros: function () {
         const entries = Object.entries(this.exchangeRates);
         for (const [currency, rate] of entries) {
           if (currency === this.selectedCurrency) {
-            return this.amountToConvert * rate;
+            const amount = this.amountToConvert * rate;
+            return amount.toFixed(2);
           }
         }
       }

@@ -9,7 +9,7 @@
     <div id="app">
 
       <h1>Euro Currency Converter</h1>
-      <form v-on:submit.prevent="getExchangeRateFromEuros">
+      <form v-on:submit.prevent="exchangeRateFromEuros">
       <label for="amountToConvert">Please enter amount to convert €/</label>
       <select v-model = "selectedCurrency">
         <option v-for="(value, name) in exchangeRates">{{ name }}</option>
@@ -20,7 +20,7 @@
 
       </form>
       <br>
-      <h3>Exchange Rate (€/selected currency): {{ getExchangeRateFromEuros }} {{ selectedCurrency }}</h3>
+      <h3>Exchange Rate (€/selected currency): {{ exchangeRateFromEuros }} {{ selectedCurrency }}</h3>
       <br>
       <p>Latest Exchange Rates : €</p>
       <ul v-for="(value, name) in exchangeRates">
