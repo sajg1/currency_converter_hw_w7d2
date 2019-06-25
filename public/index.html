@@ -7,8 +7,9 @@
   </head>
   <body>
     <div id="app">
+      <p>{{getExchangeRate}}</p>
       <h1>Euro Currency Converter</h1>
-      <form v-on:submit.prevent="checkConversion">
+      <form v-on:submit.prevent="getExchangeRate">
       <label for="amountToConvert">Please enter amount to convert(in Euros):</label>
       <input type="number" id="amountToConvert" v-model.number="amountToConvert">
 

@@ -11,6 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mounted() {
       this.getExchangeRates();
     },
+    computed: {
+      getExchangeRate: function () {
+        const entries = Object.entries(this.exchangeRates);
+        for (const [currency, rate] of entries) {
+          if (currency === this.selectedCurrency) {
+            return rate;
+          }
+        }
+      }
+    },
     methods: {
       getExchangeRates: function () {
         fetch("https://api.exchangeratesapi.io/latest")
