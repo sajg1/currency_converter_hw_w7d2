@@ -7,8 +7,8 @@
   </head>
   <body>
     <div id="app">
-      <ul v-for="value in exchangeRates">
-        <li>{{value}}</li>
+      <ul v-for="(value, name) in exchangeRates">
+        <li>{{ name }} : {{ value }}</li>
       </ul>
     </div>
   </body>
