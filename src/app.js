@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const entries = Object.entries(this.exchangeRates);
         for (const [currency, rate] of entries) {
           if (currency === this.selectedCurrency) {
-            return rate;
+            return this.amountToConvert * rate;
           }
         }
       }
